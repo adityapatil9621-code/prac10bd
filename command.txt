@@ -1,0 +1,36 @@
+SELECT
+    $__timeInterval(event_time) AS time,
+    city,
+    avg(pm25) AS pm25
+FROM default.air_quality
+WHERE $__timeFilter(event_time)
+GROUP BY time, city
+ORDER BY time
+
+
+SELECT
+    $__timeInterval(event_time) AS time,
+    city,
+    avg(pm10) AS pm10
+FROM default.air_quality
+WHERE $__timeFilter(event_time)
+GROUP BY time, city
+ORDER BY time
+
+SELECT
+    $__timeInterval(event_time) AS time,
+    city,
+    avg(pm10) AS pm10
+FROM default.air_quality
+WHERE $__timeFilter(event_time)
+GROUP BY time, city
+ORDER BY time
+
+SELECT
+    $__timeInterval(event_time) AS time,
+    city,
+    avg(temperature) AS temperature
+FROM default.air_quality
+WHERE $__timeFilter(event_time)
+GROUP BY time, city
+ORDER BY time
